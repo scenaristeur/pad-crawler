@@ -1,0 +1,51 @@
+require("@babel/polyfill");
+const chrome = require("selenium-webdriver/chrome");
+const {Builder, By, Key,}  = require("selenium-webdriver");
+const {assert} = require("assert");
+const { path } = require("chromedriver");
+let driver = null;
+const chromeOptions = new chrome.Options().headless();
+//const URL = "https://www.google.com/webhp?hl=en";
+
+
+
+let fs = require('fs');
+
+(async function example() {
+    let driver = await new Builder()
+      .forBrowser('chrome')
+      .build();
+await driver.get('https://google.fr');
+    //await driver.get('https://pad.lescommuns.org/D6vKppj_SvqaYBjDOsgp-Q#');
+    // Returns base64 encoded string
+    let encodedString = await driver.takeScreenshot();
+    let img_name = Date.now().getTime()+'.png'
+    console.log(img_name)
+    await fs.writeFileSync('./images/image.png', encodedString, 'base64');
+    await driver.quit();
+}())
+
+
+
+// describe("Selenium", () => {
+//   beforeEach(async () => {
+//     driver = await new Builder(path)
+//       .forBrowser("chrome").setChromeOptions(chromeOptions)
+//       //.forBrowser('firefox')
+//       .build();
+//     await driver.get(URL);
+//   });
+//
+//   afterEach(async () => {
+//     await driver.quit();
+//   });
+//
+//
+//   // it("should render a message on a Google search result", async () => {
+//   //   const element = await driver.findElement(By.name("q"));
+//   //   console.log("element", element)
+//   //   await element.sendKeys("webdriver", Key.RETURN);
+//   //   const res = await driver.findElement(By.css(".LC20lb")).getText();
+//   //   assert.notEqual(res, null);
+//   // });
+// });
