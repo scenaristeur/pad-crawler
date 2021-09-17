@@ -10,13 +10,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@babel/polyfill": "^7.4.0",
     "@babel/preset-env": "^7.3.4",
     "@babel/register": "^7.0.0",
+    "axios": "^0.21.4",
     "chromedriver": "^93.0.1",
+    "express": "^4.17.1",
     "mocha": "latest",
     "selenium-webdriver": "^4.0.0-rc-1"
   }

@@ -19,3 +19,9 @@ mocha pad.spec.js
 
 # ajouter dbpedia spotlight
 - https://www.dbpedia-spotlight.org/
+
+// Make a request for a user with a given text
+// https://www.dbpedia-spotlight.org/api
+  axios.get('https://api.dbpedia-spotlight.org/en/annotate?text='+encodeURIComponent(text))
+//axios.get('https://api.dbpedia-spotlight.org/en/spot?text='+encodeURIComponent(text))
+//axios.get('https://api.dbpedia-spotlight.org/en/candidates?text='+encodeURIComponent(text))

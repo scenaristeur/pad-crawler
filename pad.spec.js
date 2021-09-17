@@ -5,14 +5,17 @@ const {assert} = require("assert");
 const { path } = require("chromedriver");
 let driver = null;
 const chromeOptions = new chrome.Options().headless();
-//const URL = "https://www.google.com/webhp?hl=en";
-
-
+const axios = require('axios');
 
 let fs = require('fs');
 
+
+// on limite les tests dbpedia à 100 opérations tant que ce n'est pas totalement calé
+var test_count
+
 (async function example() {
-  let driver = await new Builder()
+  test_count = 100
+  driver = await new Builder()
   .forBrowser('chrome')
   .build();
 
@@ -25,77 +28,113 @@ let fs = require('fs');
   await fs.writeFileSync('./images/'+filename, encodedString, 'base64');
 
 
-  let links = await driver.findElements(By.tagName("a"));
-  console.log("links",links)
-
-
-  for (const link of links){
-     let text = await link.getText()
-    console.log(text)
-  }
-
+  //await links()
 
 
 
   let body = await driver.findElements(By.tagName("body"));
   console.log("body", body)
   var childs = await driver.findElements(By.xpath("//*"));
-  console.log(childs)
+  //console.log(childs)
+
+
 
   for await (const child of childs){
-    let tagname = await child.getTagName()
-    let text = await child.getText()
-    console.log("------",tagname, ":::", text)
-    try{
-      let attributes = await child.getProperty('attributes')
+    // Différentes fonctions pour récupérer les informations des différents élements
+    //await nameAndText(child)
+    // await attributes(child)
+    await dbpedia(child)
 
-      attributes.forEach((att) => {
-        console.log("____",att.name,"->", att.value)
-      });
-    }catch(e){
-      console.error("error",e)
-    }
 
-    console.log("==========================================")
+    //  console.log("==========================================")
   }
 
-  // for (const child of childs){
-  //   var c = await child.findElements(By.xpath("/*/*"));
-  //   console.log("------",c)
-  //   //  let text = await link.getText()
-  // //  console.log(child)
-  // }
-
-
-
+console.log("nombre de childs",childs.length)
 
   await driver.quit();
 }())
 
 
+async function links(){
+  let links = await driver.findElements(By.tagName("a"));
+  console.log("links",links)
 
 
+  for (const link of links){
+    let text = await link.getText()
+    console.log(text)
+  }
 
 
-// describe("Selenium", () => {
-//   beforeEach(async () => {
-//     driver = await new Builder(path)
-//       .forBrowser("chrome").setChromeOptions(chromeOptions)
-//       //.forBrowser('firefox')
-//       .build();
-//     await driver.get(URL);
-//   });
-//
-//   afterEach(async () => {
-//     await driver.quit();
-//   });
-//
-//
-//   // it("should render a message on a Google search result", async () => {
-//   //   const element = await driver.findElement(By.name("q"));
-//   //   console.log("element", element)
-//   //   await element.sendKeys("webdriver", Key.RETURN);
-//   //   const res = await driver.findElement(By.css(".LC20lb")).getText();
-//   //   assert.notEqual(res, null);
-//   // });
-// });
+}
+async function nameAndText(element){
+  let tagname = await element.getTagName()
+  let text = await element.getText()
+
+  console.log("------",tagname, ":::", text)
+}
+
+async function attributes(element){
+
+  try{
+    let attributes = await element.getProperty('attributes')
+
+    attributes.forEach((att) => {
+      console.log("____",att.name,"->", att.value)
+    });
+  }catch(e){
+    console.error("error",e)
+  }
+}
+
+
+async function dbpedia(element){
+
+
+  let text = await element.getText()
+  //console.log(text)
+  if (text.length > 10 && text.length <100){ // pb url too long
+    console.log(test_count, text)
+
+    if (test_count > 0){
+      test_count --
+      //  curl -X GET "https://api.dbpedia-spotlight.org/en/annotate?text=
+
+      // Make a request for a user with a given text
+      // https://www.dbpedia-spotlight.org/api
+      axios.get('https://api.dbpedia-spotlight.org/en/annotate?text='+encodeURIComponent(text))
+    //  axios.get('https://api.dbpedia-spotlight.org/en/spot?text='+encodeURIComponent(text))
+    //  axios.get('https://api.dbpedia-spotlight.org/en/candidates?text='+encodeURIComponent(text))
+      // axios({
+      //   method: 'post',
+      //   url: 'https://api.dbpedia-spotlight.org/en/annotate',
+      //   data: {
+      //     text: text,
+      //     //lastName: 'Flintstone'
+      //   },
+      //
+      //     headers: {
+      //       // 'application/json' is the modern content-type for JSON, but some
+      //       // older servers may use 'text/json'.
+      //       // See: http://bit.ly/text-json
+      //       'content-type': 'text/json'
+      //     }
+      //
+      // })
+      .then(function (response) {
+        // handle success
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      })
+      .then(function () {
+        // always executed
+      });
+
+    }
+
+
+  }
+}
