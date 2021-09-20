@@ -1,3 +1,6 @@
+let fonctionnalites = {links: true, nameAndText: false, attributes: false, dbpedia: false}
+
+
 require("@babel/polyfill");
 const chrome = require("selenium-webdriver/chrome");
 const {Builder, By, Key,}  = require("selenium-webdriver");
@@ -28,7 +31,7 @@ var test_count
   await fs.writeFileSync('./images/'+filename, encodedString, 'base64');
 
 
-  //await links()
+    if (fonctionnalites.links)  await links()
 
 
 
@@ -41,15 +44,15 @@ var test_count
 
   for await (const child of childs){
     // Différentes fonctions pour récupérer les informations des différents élements
-    //await nameAndText(child)
-    // await attributes(child)
-    await dbpedia(child)
+    if (fonctionnalites.nameAndText) await nameAndText(child)
+    if (fonctionnalites.attributes) await attributes(child)
+    if (fonctionnalites.dbpedia) await dbpedia(child)
 
 
     //  console.log("==========================================")
   }
 
-console.log("nombre de childs",childs.length)
+  console.log("nombre de childs",childs.length)
 
   await driver.quit();
 }())
@@ -62,7 +65,8 @@ async function links(){
 
   for (const link of links){
     let text = await link.getText()
-    console.log(text)
+    let href = await link.getAttribute('href')
+    console.log(text,"->", href)
   }
 
 
@@ -103,8 +107,8 @@ async function dbpedia(element){
       // Make a request for a user with a given text
       // https://www.dbpedia-spotlight.org/api
       axios.get('https://api.dbpedia-spotlight.org/en/annotate?text='+encodeURIComponent(text))
-    //  axios.get('https://api.dbpedia-spotlight.org/en/spot?text='+encodeURIComponent(text))
-    //  axios.get('https://api.dbpedia-spotlight.org/en/candidates?text='+encodeURIComponent(text))
+      //  axios.get('https://api.dbpedia-spotlight.org/en/spot?text='+encodeURIComponent(text))
+      //  axios.get('https://api.dbpedia-spotlight.org/en/candidates?text='+encodeURIComponent(text))
       // axios({
       //   method: 'post',
       //   url: 'https://api.dbpedia-spotlight.org/en/annotate',
