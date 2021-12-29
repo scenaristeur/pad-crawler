@@ -1,0 +1,727 @@
+{
+  "root": {
+    "url": "https://forum.solidproject.org/"
+  },
+  "links": [
+    {
+      "url": "https://forum.solidproject.org/#main-container",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/search",
+      "text": ""
+    },
+    {
+      "url": "",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/privacy",
+      "text": "Privacy Policy"
+    },
+    {
+      "url": "https://forum.solidproject.org/tos",
+      "text": "Terms of Service"
+    },
+    {
+      "url": "mailto:info@solidproject.org",
+      "text": "info@solidproject.org"
+    },
+    {
+      "url": "https://forum.solidproject.org/latest",
+      "text": "Latest"
+    },
+    {
+      "url": "https://forum.solidproject.org/top",
+      "text": "Top"
+    },
+    {
+      "url": "https://forum.solidproject.org/categories",
+      "text": "Categories"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/financial-times-global-legal-hackathon-using-my-legaltech-project-on-solid/2959",
+      "text": "Financial Times / Global Legal Hackathon - using my legaltech project on Solid"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/build-a-solid-app/app-communities/10",
+      "text": "Ideas for Solid Apps"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/blake",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mitzilaszlo",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/financial-times-global-legal-hackathon-using-my-legaltech-project-on-solid/2959/9",
+      "text": "1d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/what-app-would-you-love-to-see-on-solid/525",
+      "text": "What app would you love to see on Solid?"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/build-a-solid-app/app-communities/10",
+      "text": "Ideas for Solid Apps"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mitzilaszlo",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/filsmyth",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/pheyvaer",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/tag42git",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aschrijver",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/what-app-would-you-love-to-see-on-solid/525/82",
+      "text": "1d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/common-core-ontology-with-linked-data/1860",
+      "text": "Common Core Ontology with Linked Data"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rganger",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mitzilaszlo",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/samuk",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeanpaulgrange",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/common-core-ontology-with-linked-data/1860/28",
+      "text": "5d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/the-solid-protocol-version-0-9-0-is-published/4998",
+      "text": "The Solid protocol version 0.9.0 is published!"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/megoth",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rimmartin",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/the-solid-protocol-version-0-9-0-is-published/4998/5",
+      "text": "5d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/patch-error-failed-net-err-http2-protocol-error/4987",
+      "text": "PATCH error (failed)net::ERR_HTTP2_PROTOCOL_ERROR"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/frederik",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/patch-error-failed-net-err-http2-protocol-error/4987/2",
+      "text": "5d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/get-blob-content-as-json-object/4823",
+      "text": "Get Blob content as JSON object"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/vincenzo-dip8",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/vincent",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/kay-kim",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/robertelite",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/get-blob-content-as-json-object/4823/11",
+      "text": "6d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/community-server-cant-share-a-file-to-another-webid/4976",
+      "text": "Community-Server can’t share a file to another webid"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/chaotsung",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/community-server-cant-share-a-file-to-another-webid/4976/5",
+      "text": "6d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/upgrading-to-solid-client-authn-js-in-browser/4978",
+      "text": "Upgrading to solid-client-authn-js in browser"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rimmartin",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/upgrading-to-solid-client-authn-js-in-browser/4978/11",
+      "text": "7d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/major-updates-to-solidos-nss-and-solidcommunity-net/4781",
+      "text": "Major updates to SolidOS, NSS, and solidcommunity.net"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/crspybits",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/davidboweninrupt",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jaleel",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/major-updates-to-solidos-nss-and-solidcommunity-net/4781/12",
+      "text": "7d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/inrupt-com-does-not-accept-application-ld-json/4967",
+      "text": "Inrupt.com does not accept application/ld+json"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/srosset81",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/inrupt-com-does-not-accept-application-ld-json/4967/3",
+      "text": "9d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/api-websocket-nature-of-change-and-resource-changed/4968",
+      "text": "Api-websocket, nature of change and resource changed"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/api-websocket-nature-of-change-and-resource-changed/4968/1",
+      "text": "9d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440",
+      "text": "Welcome to the Solid Forum, please introduce yourself here. Great to have you on board"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mitzilaszlo",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mr.robboto",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/megoth",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/mpabst",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/welcome-to-the-solid-forum-please-introduce-yourself-here-great-to-have-you-on-board/440/196",
+      "text": "10d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/activitypods-adding-intelligence-to-solid-pods-with-activitypub/4962",
+      "text": "ActivityPods: adding intelligence to Solid PODs with ActivityPub"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/use-solid/connection-to-other-initiatives/9",
+      "text": "Connection to Other Initiatives"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/srosset81",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aschrijver",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/activitypods-adding-intelligence-to-solid-pods-with-activitypub/4962/4",
+      "text": "11d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-solid-and-activitypub-complement-each-other-best/3134",
+      "text": "How Solid and ActivityPub complement each other best"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/use-solid/connection-to-other-initiatives/9",
+      "text": "Connection to Other Initiatives"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aschrijver",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-solid-and-activitypub-complement-each-other-best/3134/2",
+      "text": "11d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-file-server-vs-database/2390",
+      "text": "Solid: File server vs database?"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/okilele",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/dprat0821",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/vincent",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/frederik",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-file-server-vs-database/2390/12",
+      "text": "12d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/error-dereference-webid/4946",
+      "text": "Error dereference WebId"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/become-a-pod-provider/server-administration/5",
+      "text": "Server Administration"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/frederik",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/error-dereference-webid/4946/5",
+      "text": "13d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/request-for-feedback-solid-migrator-spec-and-vocab/4852",
+      "text": "Request for Feedback: Solid Migrator spec and vocab"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/solid-specification/34",
+      "text": "Solid Specification"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/potherca",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/timbl",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/stanley963",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/sjoerdvangroning",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/request-for-feedback-solid-migrator-spec-and-vocab/4852/5",
+      "text": "13d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/application-of-crdts-to-solid/3321",
+      "text": "Application of CRDTs to Solid"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/happybeing",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rubenverborgh",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/markjspivey",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/gsvarovsky",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aschrijver",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/application-of-crdts-to-solid/3321/16",
+      "text": "17d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-community-server-bad-request-400/4939",
+      "text": "Solid Community Server - Bad Request / 400"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/s-p",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-community-server-bad-request-400/4939/3",
+      "text": "18d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/problem-with-refreshing-data-in-solid/1481",
+      "text": "Problem with refreshing data in solid"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/migarve55",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/a_a",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rodant",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aveltens",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/problem-with-refreshing-data-in-solid/1481/7",
+      "text": "19d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/net-c-dotnetrdf-for-solid/1687",
+      "text": ".NET, C#, DOTNETRDF for Solid?"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/become-a-pod-provider/backend-development/15",
+      "text": "Backend Development"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/markjspivey",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/moisesj",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/walter.almeida",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/alexcorvis84",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/justnwaters",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/net-c-dotnetrdf-for-solid/1687/7",
+      "text": "19d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/yet-another-solid-hello-world/4883",
+      "text": "Yet another Solid Hello World"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/build-a-solid-app/solid-app-development-faqs/6",
+      "text": "Solid App Development FAQs"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/noeldemartin",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/hochstenbach",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/timea",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/yet-another-solid-hello-world/4883/45",
+      "text": "19d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/sparql-update-general-questions/4935",
+      "text": "SPARQL UPDATE - General Questions"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/s-p",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/sparql-update-general-questions/4935/9",
+      "text": "20d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/authorize-a-party-to-use-your-data/4933",
+      "text": "Authorize a party to use your data"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/frederik",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/bourgeoa",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/authorize-a-party-to-use-your-data/4933/7",
+      "text": "21d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-do-i-create-new-linked-data-in-my-solid-pod/4926",
+      "text": "How do I create new linked data in my Solid pod"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/build-a-solid-app/linked-data/33",
+      "text": "Linked Data"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/frederik",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/vincent",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-do-i-create-new-linked-data-in-my-solid-pod/4926/10",
+      "text": "23d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-to-add-inline-content-in-an-authenticated-solid-app/4929",
+      "text": "How to add inline content in an authenticated Solid App?"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/build-a-solid-app/solid-app-development-faqs/6",
+      "text": "Solid App Development FAQs"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/hochstenbach",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/josephguillaume",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/how-to-add-inline-content-in-an-authenticated-solid-app/4929/5",
+      "text": "24d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/turtle-file-prefixes-are-lost-when-updating-solid-community-server/4924",
+      "text": "Turtle file prefixes are lost when updating solid community-server"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/anushka",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/jeffz",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/rubenverborgh",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/turtle-file-prefixes-are-lost-when-updating-solid-community-server/4924/6",
+      "text": "27d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/build-a-website-on-solid-pod/4925",
+      "text": "Build a website on Solid pod"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/build-a-website-on-solid-pod/4925/1",
+      "text": "27d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-the-comic/4920",
+      "text": "Solid the Comic"
+    },
+    {
+      "url": "https://forum.solidproject.org/c/use-solid/solid-the-basics/12",
+      "text": "Solid: The Basics"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/hochstenbach",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/nickform",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aschrijver",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/aveltens",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/solid-the-comic/4920/7",
+      "text": "29d"
+    },
+    {
+      "url": "https://forum.solidproject.org/t/moving-files-or-folder-in-a-pod-with-popock/4921",
+      "text": "Moving files or folder in a pod with poPock"
+    },
+    {
+      "url": "https://forum.solidproject.org/u/smag0",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/u/nickform",
+      "text": ""
+    },
+    {
+      "url": "https://forum.solidproject.org/t/moving-files-or-folder-in-a-pod-with-popock/4921/4",
+      "text": "29d"
+    }
+  ]
+}

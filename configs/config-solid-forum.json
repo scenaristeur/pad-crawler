@@ -1,7 +1,7 @@
 {
   "api": {
-    "name": "Pad La myne",
-    "url": "https://pad.lescommuns.org/D6vKppj_SvqaYBjDOsgp-Q#",
+    "name": "Solid Community Forum",
+    "url": "https://forum.solidproject.org/",
     "deep": 12,
     "test_count": 100
   },
@@ -9,6 +9,7 @@
     "debug": 0
   },
   "fonctionnalites":{
+    "base64_screenshot": false,
     "links": true,
     "nameAndText": false,
     "attributes": false,

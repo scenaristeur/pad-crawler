@@ -19,14 +19,16 @@ with configs/config.json like that
 ```
 {
   "api": {
-    "name": "Pad La myne",
-    "url": "https://pad.lamyne.org/s/BkEqHEh-W#",
-    "deep": "12"
+    "name": "Solid Community Forum",
+    "url": "https://forum.solidproject.org/",
+    "deep": 12,
+    "test_count": 100
   },
   "params": {
-    "debug":
+    "debug": 0
   },
   "fonctionnalites":{
+    "base64_screenshot": false,
     "links": true,
     "nameAndText": false,
     "attributes": false,
@@ -35,13 +37,13 @@ with configs/config.json like that
 }
 ```
 
-with debug : level of debug 0 to 10 with  10 : stop after init 
+with debug : level of debug 0 to 10 with  10 : stop after init
 
 
 - representer les infos d'un pad tel que https://pad.lescommuns.org/D6vKppj_SvqaYBjDOsgp-Q# sous forme de graphe
 
 # idee
-- selenium pour crawler
+- selenium pour crawler https://www.selenium.dev/selenium/docs/api/javascript/index.html
 - mocha ? in browser https://mochajs.org/#running-mocha-in-the-browser
 
 

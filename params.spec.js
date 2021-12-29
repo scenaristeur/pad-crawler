@@ -9,6 +9,8 @@ const axios = require('axios');
 
 let fs = require('fs');
 
+var Bar = require('progress-barjs');
+
 // var path = require('path')
 // var fs = require('fs')
 // var assert = require('assert')
@@ -35,7 +37,7 @@ if (debug == 10 ){
 
   return
 }
-
+let date = new Date().getTime()
 
 console.log("start")
 let pages = {}
@@ -53,55 +55,65 @@ var test_count
   }catch(e){
     console.log(e)
   }
-
-  await driver.get('https://pad.lamyne.org/s/BkEqHEh-W#');
+  await driver.get(url);
+  pages.root = {url: url}
   // Returns base64 encoded string
-  let encodedString = await driver.takeScreenshot();
-  let filename = new Date().getTime()+".png"
-  console.log("date",filename)
-
-  await fs.writeFileSync('./images/'+filename, encodedString, 'base64');
-
-
+  if (fonctionnalites.base64_screenshot == true){
+    let encodedString = await driver.takeScreenshot();
+    let filename = date+".png"
+    //  console.log("date",filename)
+    await fs.writeFileSync('./images/'+filename, encodedString, 'base64');
+    pages.root.base64_screenshot = encodedString
+  }
   if (fonctionnalites.links)  await links()
-
-
 
   let body = await driver.findElements(By.tagName("body"));
   //console.log("body", body)
   var childs = await driver.findElements(By.xpath("//*"));
   //console.log(childs)
 
-
-
   for await (const child of childs){
     // Différentes fonctions pour récupérer les informations des différents élements
     if (fonctionnalites.nameAndText) await nameAndText(child)
     if (fonctionnalites.attributes) await attributes(child)
     if (fonctionnalites.dbpedia) await dbpedia(child)
-
-
     //  console.log("==========================================")
   }
-
+  console.log("pages ", pages )
   console.log("nombre de childs",childs.length)
-
+  //  console.log("root", pages.root)
+  try{
+    await fs.writeFileSync('./restit/'+name+" "+date+'.json', JSON.stringify(pages, null, 2), 'utf-8');
+  }catch(e){
+    console.log(e)
+  }
   await driver.quit();
 }())
 
 
 async function links(){
+  pages.links = []
   let links = await driver.findElements(By.tagName("a"));
-  //  console.log("links",links)
+  let options = {
+    info: 'Links',
+    total: links.length,
+  };
 
-
-  for (const link of links){
-    let text = await link.getText()
-    let href = await link.getAttribute('href')
-    console.log(text,"->", href)
+  try{
+    let bar = Bar(options);
+    let i = 1;
+    for (const link of links){
+      let text = await link.getText()
+      //let content = await link.getContent()
+      let url = await link.getAttribute('href')
+      let l = {url: url, text: text, order: i/* content: content*/}
+      pages.links.push(l)
+      bar.tick('Link number ' + i);
+      i++
+    }
+  }catch(e){
+    console.log("err",e)
   }
-
-
 }
 async function nameAndText(element){
   let tagname = await element.getTagName()
@@ -168,9 +180,6 @@ async function dbpedia(element){
       .then(function () {
         // always executed
       });
-
     }
-
-
   }
 }
