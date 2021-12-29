@@ -8,7 +8,12 @@ const chromeOptions = new chrome.Options().headless();
 const axios = require('axios');
 
 let fs = require('fs');
-
+let dirs = ['./images', './restit']
+for (let dir of dirs){
+if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+  }
 var Bar = require('progress-barjs');
 
 // var path = require('path')
