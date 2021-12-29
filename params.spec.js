@@ -12,6 +12,21 @@ const axios = require('axios');
 
 let fs = require('fs');
 
+// var path = require('path')
+// var fs = require('fs')
+// var assert = require('assert')
+var argv = require('optimist').demand('config').argv
+var configFilePath = argv.config
+// assert.ok(fs.existsSync(configFilePath), 'config file not found at path: ' + configFilePath)
+var config = require('nconf').env().argv().file({file: configFilePath})
+var apiConfig = config.get('api')
+var url = apiConfig.url
+var name = apiConfig.name
+
+console.log('\n\n##########\nExploration de : '+name)
+console.log('- url in '+configFilePath+": "+ url)
+console.log('##########\n')
+
 console.log("start")
 let pages = {}
 
