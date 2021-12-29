@@ -1,6 +1,3 @@
-let fonctionnalites = {links: true, nameAndText: false, attributes: false, dbpedia: true}
-
-
 require("@babel/polyfill");
 const chrome = require("selenium-webdriver/chrome");
 const {Builder, By, Key,}  = require("selenium-webdriver");
@@ -20,12 +17,25 @@ var configFilePath = argv.config
 // assert.ok(fs.existsSync(configFilePath), 'config file not found at path: ' + configFilePath)
 var config = require('nconf').env().argv().file({file: configFilePath})
 var apiConfig = config.get('api')
+let params = config.get('params')
+let debug = params.debug
 var url = apiConfig.url
 var name = apiConfig.name
+let fonctionnalites = config.get('fonctionnalites')
+// var test_count = apiConfig.test_count
 
 console.log('\n\n##########\nExploration de : '+name)
 console.log('- url in '+configFilePath+": "+ url)
+console.log('- params :' + JSON.stringify(params))
+console.log('- fonctionnalites', fonctionnalites)
 console.log('##########\n')
+
+if (debug == 10 ){
+  console.log('debug mode 10')
+
+  return
+}
+
 
 console.log("start")
 let pages = {}
@@ -82,7 +92,7 @@ var test_count
 
 async function links(){
   let links = await driver.findElements(By.tagName("a"));
-//  console.log("links",links)
+  //  console.log("links",links)
 
 
   for (const link of links){

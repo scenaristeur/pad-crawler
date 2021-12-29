@@ -2,6 +2,16 @@
   "api": {
     "name": "Pad La myne",
     "url": "https://pad.lamyne.org/s/BkEqHEh-W#",
-    "deep": "12"
+    "deep": 12,
+    "test_count": 100
+  },
+  "params": {
+    "debug": 0
+  },
+  "fonctionnalites":{
+    "links": true,
+    "nameAndText": false,
+    "attributes": false,
+    "dbpedia": false
   }
 }

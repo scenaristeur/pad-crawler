@@ -22,10 +22,20 @@ with configs/config.json like that
     "name": "Pad La myne",
     "url": "https://pad.lamyne.org/s/BkEqHEh-W#",
     "deep": "12"
+  },
+  "params": {
+    "debug":
+  },
+  "fonctionnalites":{
+    "links": true,
+    "nameAndText": false,
+    "attributes": false,
+    "dbpedia": false
   }
 }
 ```
 
+with debug : level of debug 0 to 10 with  10 : stop after init 
 
 
 - representer les infos d'un pad tel que https://pad.lescommuns.org/D6vKppj_SvqaYBjDOsgp-Q# sous forme de graphe
