@@ -1,0 +1,22 @@
+{
+  "api": {
+    "name": "Ipfs.io",
+    "url": "https://ipfs.io/",
+    "deep": 12,
+    "test_count": 100
+  },
+  "params": {
+    "debug": 0
+  },
+  "fonctionnalites":{
+    "screenshot": true,
+    "base64_screenshot": false,
+    "links": true,
+    "nameAndText": false,
+    "attributes": false,
+    "dbpedia": false
+  },
+  "output": {
+    "ipfs": true
+  }
+}

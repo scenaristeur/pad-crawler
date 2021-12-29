@@ -40,6 +40,14 @@ with configs/config.json like that
 with debug : level of debug 0 to 10 with  10 : stop after init
 
 
+# store on ipfs
+
+```
+mocha output.spec.js --config=configs/config-ipfsio.json
+mocha output.spec.js --config=configs/config-carto-semapps.json
+
+```
+
 - representer les infos d'un pad tel que https://pad.lescommuns.org/D6vKppj_SvqaYBjDOsgp-Q# sous forme de graphe
 
 # idee

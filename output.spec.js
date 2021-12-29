@@ -7,6 +7,14 @@ let driver = null;
 const chromeOptions = new chrome.Options().headless();
 const axios = require('axios');
 
+// IPFS
+// based on https://github.com/ipfs-examples/js-ipfs-examples/blob/master/examples/ipfs-101/index.js
+const IPFS = require('ipfs-core')
+const all = require('it-all')
+const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
+const { fromString: uint8ArrayFromString } = require('uint8arrays/from-string')
+const { toString: uint8ArrayToString } = require('uint8arrays/to-string')
+
 let fs = require('fs');
 let dirs = ['./images', './restit']
 for (let dir of dirs){
@@ -25,16 +33,21 @@ var configFilePath = argv.config
 var config = require('nconf').env().argv().file({file: configFilePath})
 var apiConfig = config.get('api')
 let params = config.get('params')
+let fonctionnalites = config.get('fonctionnalites')
+let output = config.get('output')
+
 let debug = params.debug
 var url = apiConfig.url
 var name = apiConfig.name
-let fonctionnalites = config.get('fonctionnalites')
+
+
 // var test_count = apiConfig.test_count
 
 console.log('\n\n##########\nExploration de : '+name)
 console.log('- url in '+configFilePath+": "+ url)
 console.log('- params :' + JSON.stringify(params))
 console.log('- fonctionnalites', fonctionnalites)
+console.log('- output :' + JSON.stringify(output))
 console.log('##########\n')
 
 if (debug == 10 ){
@@ -43,6 +56,9 @@ if (debug == 10 ){
   return
 }
 let date = new Date().getTime()
+
+
+
 
 console.log("start")
 let pages = {}
@@ -93,13 +109,60 @@ var test_count
   console.log("pages ", pages )
   console.log("nombre de childs",childs.length)
   //  console.log("root", pages.root)
+  let path = './restit/'+name+" "+title+" "+date+'.json'
   try{
-    await fs.writeFileSync('./restit/'+name+" "+title+" "+date+'.json', JSON.stringify(pages, null, 2), 'utf-8');
+    await fs.writeFileSync(path, JSON.stringify(pages, null, 2), 'utf-8');
   }catch(e){
     console.log(e)
   }
+
+  console.log("will quit")
   await driver.quit();
+
+  if (output.ipfs ==  true){await storeOnIpfs()}
 }())
+
+async function storeOnIpfs(path){
+
+  const node = await IPFS.create()
+  const version = await node.version()
+
+  console.log('IPFS Version:', version.version)
+
+  try{
+    // let data = 'Hello, <YOUR NAME HERE>'
+    //
+    // // add your data to to IPFS - this can be a string, a Buffer,
+    // // a stream of Buffers, etc
+    // const results = node.add(data)
+    //
+    // // we loop over the results because 'add' supports multiple
+    // // additions, but we only added one entry here so we only see
+    // // one log line in the output
+    // for await (const { cid } of results) {
+    //   // CID (Content IDentifier) uniquely addresses the data
+    //   // and can be used to get it again.
+    //   console.log(cid.toString())
+    //   console.log("https://ipfs.io/ipfs/"+cid.toString())
+    // }
+
+
+    const file = await node.add({
+      path: path,
+      content: uint8ArrayFromString(JSON.stringify(pages))
+    })
+
+    console.log('Added file:', file.path, file.cid.toString())
+
+    const data = uint8ArrayConcat(await all(node.cat(file.cid)))
+
+    //console.log('Added file contents:', uint8ArrayToString(data))
+    console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
+  }catch(e){
+    console.log('err',e)
+  }
+
+}
 
 
 async function links(){

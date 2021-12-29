@@ -1,0 +1,22 @@
+{
+  "api": {
+    "name": "Wikipedia Fr Page au hasard",
+    "url": "https://fr.wikipedia.org/wiki/Sp%C3%A9cial:Page_au_hasard",
+    "deep": 12,
+    "test_count": 100
+  },
+  "params": {
+    "debug": 0
+  },
+  "fonctionnalites":{
+    "screenshot": true,
+    "base64_screenshot": false,
+    "links": true,
+    "nameAndText": false,
+    "attributes": false,
+    "dbpedia": false
+  },
+  "output": {
+    "ipfs": true
+  }
+}
