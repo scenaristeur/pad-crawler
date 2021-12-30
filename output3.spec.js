@@ -62,7 +62,7 @@ let date = new Date().getTime()
 
 console.log("start")
 let pages = {}
-pages.date = date
+// pages.date = date
 
 // on limite les tests dbpedia à 100 opérations tant que ce n'est pas totalement calé
 var test_count
@@ -115,13 +115,14 @@ var test_count
   }catch(e){
     console.log(e)
   }
-if (output.ipfs ==  true){await storeOnIpfs()}
+  if (output.ipfs ==  true){await storeOnIpfs()}
   console.log("will quit")
   await driver.quit();
 
+
 }())
 
-async function storeOnIpfs(path){
+async function storeOnIpfs(){
 
   const node = await IPFS.create()
   const version = await node.version()
@@ -146,17 +147,17 @@ async function storeOnIpfs(path){
     // }
 
 
-    const file = await node.add({
-      path: path,
-      content: uint8ArrayFromString(JSON.stringify(pages))
-    })
+    const results = await node.add(JSON.stringify(pages))
+    console.log(results)
+    let cid = await results.cid
+    console.log("cid", cid)
 
-    console.log('Added file:', file.path, file.cid.toString())
-
-    const data = uint8ArrayConcat(await all(node.cat(file.cid)))
-
-    //console.log('Added file contents:', uint8ArrayToString(data))
-     console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
+    // console.log('Added file:', file.path, file.cid.toString())
+    //
+    // const data = uint8ArrayConcat(await all(node.cat(file.cid)))
+    //
+    // //console.log('Added file contents:', uint8ArrayToString(data))
+     console.log("See/share it at https://ipfs.io/ipfs/"+cid.toString())
   }catch(e){
     console.log('err',e)
   }

@@ -15,6 +15,16 @@ const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
 const { fromString: uint8ArrayFromString } = require('uint8arrays/from-string')
 const { toString: uint8ArrayToString } = require('uint8arrays/to-string')
 
+// import { encode, decode } from '@ipld/dag-json'
+// import { CID } from 'multiformats'
+const {encode, decode } = require ('@ipld/dag-json')
+// const CID = require('multiformats')
+//https://github.com/multiformats/js-multiformats/blob/47ce14f309ba2fb792992699de956a3e7ef4c655/test/cjs/test.cjs
+const multiformats = require('multiformats')
+console.log(multiformats)
+
+console.log(multiformats.CID, encode, decode)
+
 let fs = require('fs');
 let dirs = ['./images', './restit']
 for (let dir of dirs){
@@ -115,11 +125,43 @@ var test_count
   }catch(e){
     console.log(e)
   }
-if (output.ipfs ==  true){await storeOnIpfs()}
+
   console.log("will quit")
   await driver.quit();
 
+  if (output.ipfs ==  true){await storeOnIpld()}
 }())
+
+
+async function storeOnIpld(){
+  try{
+    console.log("begin")
+    const obj = {
+      x: 1,
+      /* CID instances are encoded as links */
+      y: [2, 3,multiformats.CID.parse('QmaozNR7DZHQK1ZcU9p7QdrshMvXqWK6gpu5rmrkPdT3L4')],
+      z: {
+        a:multiformats.CID.parse('QmaozNR7DZHQK1ZcU9p7QdrshMvXqWK6gpu5rmrkPdT3L4'),
+        b: null,
+        c: 'string'
+      }
+    }
+    console.log(obj)
+    let data = encode(obj)
+    console.log("data",data)
+    let decoded = decode(data)
+    console.log("decoded", decoded)
+    decoded.y[0] // 2
+    let result =   multiformats.CID.asCID(decoded.z.a) // cid instance
+    console.log("result", result)
+  }catch(e){
+    console.log("err",e)
+  }
+
+}
+
+
+
 
 async function storeOnIpfs(path){
 
@@ -155,8 +197,8 @@ async function storeOnIpfs(path){
 
     const data = uint8ArrayConcat(await all(node.cat(file.cid)))
 
-    //console.log('Added file contents:', uint8ArrayToString(data))
-     console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
+    console.log('Added file contents:', uint8ArrayToString(data))
+    console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
   }catch(e){
     console.log('err',e)
   }

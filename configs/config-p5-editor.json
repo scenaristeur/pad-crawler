@@ -15,5 +15,8 @@
     "nameAndText": false,
     "attributes": false,
     "dbpedia": false
+  },
+  "output": {
+    "ipfs": true
   }
 }

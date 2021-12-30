@@ -9,11 +9,11 @@ const axios = require('axios');
 
 // IPFS
 // based on https://github.com/ipfs-examples/js-ipfs-examples/blob/master/examples/ipfs-101/index.js
-const IPFS = require('ipfs-core')
-const all = require('it-all')
-const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
-const { fromString: uint8ArrayFromString } = require('uint8arrays/from-string')
-const { toString: uint8ArrayToString } = require('uint8arrays/to-string')
+const IPFS = require('ipfs')
+// const all = require('it-all')
+// const { concat: uint8ArrayConcat } = require('uint8arrays/concat')
+// const { fromString: uint8ArrayFromString } = require('uint8arrays/from-string')
+// const { toString: uint8ArrayToString } = require('uint8arrays/to-string')
 
 let fs = require('fs');
 let dirs = ['./images', './restit']
@@ -115,13 +115,28 @@ var test_count
   }catch(e){
     console.log(e)
   }
-if (output.ipfs ==  true){await storeOnIpfs()}
+
   console.log("will quit")
   await driver.quit();
 
+  if (output.ipfs ==  true){await storeOnIpfs()}
 }())
 
-async function storeOnIpfs(path){
+
+async function storeOnIpfs(){
+  try{
+    console.log("IPFS", IPFS)
+    // const dagCBOR = require('@ipld/dag-cbor')
+    // let cid = await dagCBOR.put({ test: 1 })
+    // console.log("cid", cid)
+  }catch(e){
+    console.log("err", e)
+  }
+}
+
+
+
+async function storeOnIpfs1(path){
 
   const node = await IPFS.create()
   const version = await node.version()
@@ -155,8 +170,8 @@ async function storeOnIpfs(path){
 
     const data = uint8ArrayConcat(await all(node.cat(file.cid)))
 
-    //console.log('Added file contents:', uint8ArrayToString(data))
-     console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
+    console.log('Added file contents:', uint8ArrayToString(data))
+    console.log("See/share it at https://ipfs.io/ipfs/"+file.cid.toString())
   }catch(e){
     console.log('err',e)
   }
